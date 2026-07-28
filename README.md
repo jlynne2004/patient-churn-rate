@@ -58,6 +58,7 @@ Prioritization is driven by dollar impact, not churn probability alone. Several 
 ## Limitations
 - dataset is fully synthetic, so findings reflect designed relationships rather than real-world behavior
 - MDI feature importance initially overstated two random noise features and understated a real categorical driver (**Insurance_Type**), corrected via permutation importance. (This is worth noting as a general modeling lesson, not just a project quirk)
+- Billing Issues' outsized permutation importance relative to other designed drivers (roughly 10x larger than Distance or Insurance Type) reflects its much larger coefficient in the synthetic data's generating function, not necessarily a real-world effect size. It's worth noting since this is a property of how the dataset was calibrated, not an independently discovered relationship.
 - no cost data for retention outreach, so no ROI calculation is included
 - model would need retraining and revalidation against real patient data before any production use
 
